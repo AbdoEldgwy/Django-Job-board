@@ -23,6 +23,10 @@ class Job(models.Model):
     salary = models.IntegerField(default=0)
     img = models.ImageField(upload_to=upload_location, default='images/default.png')
 
+    
+    def __str__(self):
+        return self.title
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
     # job = models.ManyToManyField(Job,related_name='categories')
